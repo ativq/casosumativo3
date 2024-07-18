@@ -22,13 +22,10 @@ def descripcion1(request):
     context={}
     return render(request, "app/descripcion1.html", context)
 
-def login(request):
+def login_view(request):
     context={}
     return render(request, "app/login.html", context)
 
-def login(request):
-    context={}
-    return render(request, "app/logout  .html", context)
 
 def registro(request):
     data = {
@@ -39,6 +36,7 @@ def registro(request):
         if formulario.is_valid():
             formulario.save()
             user = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
+            print(user)
             login(request, user)
             return redirect(to="principal")
         data["form"] = formulario

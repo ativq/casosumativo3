@@ -1,4 +1,4 @@
-#!C:\workspace\caso3\myVenv\Scripts\python.exe
+#!D:\9\casosumativo3\myVenv\Scripts\python.exe
 # -*- coding: utf-8 -*-
 
 USAGE = """Usage: echo "Héllo Wörld" | slugify # => hello-world"""
