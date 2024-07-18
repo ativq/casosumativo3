@@ -33,17 +33,36 @@
                                 <li><a class="dropdown-item" href="{% url 'descripcion' %}">Terror</a></li>
                             </ul>
                         </li>
+                        
                     </ul>
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Busca aqui" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
                     <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#contactModal">Contacto</button>
+                    {% if user.is_authenticated %}
+                    
                     <button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#cartModal">Carrito</button>
+                
+                    {% else %}  
+                    <li></li>
+                    {% endif %}              
+                
                 </div>
-                <a href="{% url 'login' %}">
-                    <img src="images/user.png" width="80">
-                </a>
+                {% if user.is_authenticated %}
+                        <li>
+                            <p><a href="{% url 'logout' %}">Log Out</a></p>
+                        </li>
+                        <li>
+                            <a href="#">{{ user.username }}</a>
+                        </li>
+                        
+                        {% else %}
+                        <li>
+                            <a href="{% url 'login' %}"">Iniciar sesión</a>
+
+                        </li>
+                        {% endif %}
             </div>
         </nav>
     </div>

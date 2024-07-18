@@ -30,6 +30,11 @@ CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor"
 
 # Application definition
 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'ckeditor',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
